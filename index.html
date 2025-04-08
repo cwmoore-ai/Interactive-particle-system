@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Particle System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="particleCanvas"></canvas>
+        <div class="info-panel">
+            <h1>Interactive Particle System</h1>
+            <p class="description">Move your mouse to interact with the particles</p>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="particleCount">Particle Count</label>
+                    <input type="range" id="particleCount" min="1000" max="10000" value="5000">
+                    <span id="particleCountValue">5000</span>
+                </div>
+                <div class="control-group">
+                    <label for="particleSize">Particle Size</label>
+                    <input type="range" id="particleSize" min="1" max="10" value="3">
+                    <span id="particleSizeValue">3</span>
+                </div>
+                <div class="control-group">
+                    <label for="particleSpeed">Movement Speed</label>
+                    <input type="range" id="particleSpeed" min="1" max="10" value="5">
+                    <span id="particleSpeedValue">5</span>
+                </div>
+                <div class="control-group">
+                    <label for="colorMode">Color Mode</label>
+                    <select id="colorMode">
+                        <option value="rainbow">Rainbow</option>
+                        <option value="monochrome">Monochrome</option>
+                        <option value="heat">Heat Map</option>
+                    </select>
+                </div>
+            </div>
+            <div class="performance">
+                <p>FPS: <span id="fpsCounter">0</span></p>
+                <p>Particles: <span id="activeParticles">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Application script -->
+    <script src="app.js"></script>
+</body>
+</html>
